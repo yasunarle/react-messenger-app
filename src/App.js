@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { FormControl, Input, InputLabel, IconButton } from "@material-ui/core"
+import { FormControl, Input, IconButton } from "@material-ui/core"
 import firebase from "firebase"
 import FlipMove from "react-flip-move"
 import SendIcon from "@material-ui/icons/Send"
@@ -50,28 +50,32 @@ function App() {
         alt="messenger"
       />
       <h1>This is Messenger!</h1>
-      <h3>Welcome: {userName}</h3>
+      <h3>Welcome {userName}</h3>
 
-      <form className="app__form">
-        <FormControl>
-          <InputLabel>Enter a message...</InputLabel>
-          <Input
-            value={input}
-            onChange={(event) => setInput(event.target.value)}
-          />
-          <IconButton
-            type="submit"
-            disabled={!input}
-            variant="contained"
-            color="primary"
-            onClick={sendMessege}
-          >
-            <SendIcon></SendIcon>
-          </IconButton>
-        </FormControl>
-      </form>
+      <div className="app__form_content">
+        <form className="app__form">
+          <FormControl className="app__formControl">
+            <Input
+              placeholder="Enter a message..."
+              value={input}
+              onChange={(event) => setInput(event.target.value)}
+              className="app__input"
+            />
+            <IconButton
+              type="submit"
+              disabled={!input}
+              variant="contained"
+              color="primary"
+              onClick={sendMessege}
+              className="app__iconButton"
+            >
+              <SendIcon></SendIcon>
+            </IconButton>
+          </FormControl>
+        </form>
+      </div>
 
-      <FlipMove>
+      <FlipMove className="app__flipMove">
         {messages.map((message) => (
           <Message key={message.id} message={message} userName={userName} />
         ))}

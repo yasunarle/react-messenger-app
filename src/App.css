@@ -2,13 +2,32 @@
   text-align: center;
   padding-top: 20px;
 }
+.app__form_content {
+  z-index: 1;
+  width: 100%;
+  padding: 10px 10px 10px 0px;
+  bottom: 0px;
+  position: fixed;
+}
 
 .app__form {
+  box-sizing: border-box;
   padding: 20px;
-  width: 100%;
   background-color: #e9e9eb;
-  position: fixed;
-  bottom: 0px;
-  z-index: 1;
   margin: 20px;
+}
+
+.app__formControl {
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+.app__input {
+  flex: 1;
+}
+.app__iconButton {
+  flex: 0;
+}
+.app__flipMove {
+  margin-bottom: 30px;
 }
